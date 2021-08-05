@@ -23,10 +23,6 @@ public class EmployeeFormAddController implements Initializable {
 	@FXML
 	private TextField txtName;
 	@FXML
-	private TextField txtEmail;
-	@FXML
-	private TextField password;
-	@FXML
 	private TextField txtSalary;
 	@FXML
 	private TextField txtOffice;
@@ -38,6 +34,7 @@ public class EmployeeFormAddController implements Initializable {
 	public void setEmployee(Employee entity) {
 		this.entity = entity;
 	}
+	
 	public void setEmployeeService(EmployeeService service) {
 		this.service = service;
 	}
@@ -63,8 +60,6 @@ public class EmployeeFormAddController implements Initializable {
 	private Employee getFormData() {
 		Employee emp = new Employee();
 		emp.setName(txtName.getText());
-		emp.getAccount().setEmail(txtEmail.getText());
-		emp.getAccount().setPassword(password.getText());
 		emp.setCargo(txtOffice.getText());
 		emp.setSalary(Double.parseDouble(txtSalary.getText()));
 		return emp;
@@ -80,9 +75,9 @@ public class EmployeeFormAddController implements Initializable {
 	}
 
 	private void initializeNodes() {
-		Constraints.setTextFieldMaxLength(txtEmail, 60);
 		Constraints.setTextFieldMaxLength(txtName, 60);
-		Constraints.setTextFieldMaxLength(password, 60);
+		Constraints.setTextFieldMaxLength(txtOffice, 60);
+		Constraints.setTextFieldDouble(txtSalary);
 	}
 	
 	public void updateFormData() {
@@ -90,8 +85,6 @@ public class EmployeeFormAddController implements Initializable {
 			throw new IllegalStateException("Entity was null");
 		}
 		txtName.setText(entity.getName());
-		txtEmail.setText(entity.getAccount().getEmail());
-		password.setText(entity.getAccount().getPassword());
 		txtOffice.setText(entity.getCargo());
 		txtSalary.setText(String.valueOf(entity.getSalary()));
 	}

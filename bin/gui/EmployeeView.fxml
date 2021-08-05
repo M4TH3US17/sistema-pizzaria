@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="254.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EmployeeViewController">
+   <children>
+      <Label text="𝔽𝕦𝕟𝕔𝕚𝕠𝕟𝕒𝕣𝕚𝕠𝕤">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="210.0" />
+         </VBox.margin>
+      </Label>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#onBtnAddAction" text="Adicionar" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onBtnDeleteAction" text="Deletar" />
+            <Button fx:id="btnUpdateSalary" mnemonicParsing="false" onAction="#onBtnUpdateSalaryAction" text="Atualizar" />
+            <Button fx:id="btnClose" mnemonicParsing="false" onAction="#onBtnCloseAction" text="Produtos" />
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <TableView fx:id="tblViewEmployee" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="tblName" prefWidth="130.0" text="Nome" />
+            <TableColumn fx:id="tblSalary" prefWidth="120.0" text="Salario" />
+            <TableColumn fx:id="tblCargo" prefWidth="120.0" text="Cargo" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

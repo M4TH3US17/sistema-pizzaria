@@ -10,7 +10,6 @@ import java.util.List;
 import db.DB;
 import db.DbException;
 import model.dao.EmployeeDao;
-import model.entities.Account;
 import model.entities.Employee;
 
 public class EmployeeDaoJDBC implements EmployeeDao {
@@ -25,13 +24,11 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 	public void insert(Employee obj) {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("INSERT INTO employees (name, email, "
-					+ "password, salary, office) VALUES (?, ?, ?, ?, ?);");
+			st = conn.prepareStatement("INSERT INTO employees (name, "
+					+ "salary, office) VALUES (?, ?, ?);");
 			st.setString(1, obj.getName());
-			st.setString(2, obj.getAccount().getEmail());
-			st.setString(3, obj.getAccount().getPassword());
-			st.setDouble(4, obj.getSalary());
-			st.setString(5, obj.getCargo());
+			st.setDouble(2, obj.getSalary());
+			st.setString(3, obj.getCargo());
 			st.executeUpdate();
 		}
 		catch(SQLException e) {
@@ -77,33 +74,6 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 	}
 
 	@Override
-	public Employee findByAccount(String email, String password) {
-		ResultSet rs = null;
-		PreparedStatement st = null;
-		try {
-			st = conn.prepareStatement(
-					"SELECT * FROM employees WHERE email = ? AND password = ?;");
-			st.setString(1, email);
-			st.setString(2, password);
-			rs = st.executeQuery();
-			if(rs.next()) {
-				Account account = instantiateAccount(rs);
-				Employee emp = instantiateEmployee(rs);
-				emp.setAccount(account);
-				return emp;
-			}
-			return null;
-		}
-		catch(SQLException e) {
-			throw new DbException(e.getMessage());
-		}
-		finally {
-			DB.closeResultSet(rs);
-			DB.closeStatement(st);
-		}
-	}
-
-	@Override
 	public List<Employee> findAll() {
 		PreparedStatement st = null;
 		ResultSet rs = null;
@@ -113,8 +83,6 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 			List<Employee> emp1 = new ArrayList<>();
 			while(rs.next()) {
 				Employee emp = instantiateEmployee(rs);
-				Account account = instantiateAccount(rs);
-				emp.setAccount(account);
 				emp1.add(emp);
 			}
 			return emp1;
@@ -133,12 +101,5 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 		emp.setSalary(rs.getDouble("salary"));
 		emp.setCargo(rs.getString("office"));
 		return emp;
-	}
-
-	private Account instantiateAccount(ResultSet rs) throws SQLException {
-		Account account = new Account();
-		account.setEmail(rs.getString("email"));
-		account.setPassword(rs.getString("password"));
-		return account;
 	}
 }

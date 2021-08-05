@@ -24,7 +24,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.entities.Account;
 import model.entities.Employee;
 import model.service.EmployeeService;
 import model.service.ProductService;
@@ -61,7 +60,6 @@ public class EmployeeViewController implements Initializable {
 	public void onBtnUpdateSalaryAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
 		Employee obj = new Employee();
-		obj.setAccount(new Account());
 		createDialogFormUpdate(obj, parentStage,"/gui/EmployeeFormUpdate.fxml");	
 	}
 	@FXML
@@ -177,8 +175,8 @@ public class EmployeeViewController implements Initializable {
 			
 		} catch(IOException e) {
 			e.printStackTrace();
-			/*Alerts.showAlert("IO Exception", "Error loading view delete", 
-					e.getMessage(), AlertType.ERROR);*/
+			Alerts.showAlert("IO Exception", "Error loading view delete", 
+					e.getMessage(), AlertType.ERROR);
 		}
 	}
 }

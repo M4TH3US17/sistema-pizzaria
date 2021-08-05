@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
+   <content>
+      <VBox prefHeight="306.0" prefWidth="502.0">
+         <children>
+            <MenuBar>
+               <menus>
+                  <Menu mnemonicParsing="false" text="Entrar">
+                    <items>
+                      <MenuItem fx:id="menuItemSistema" mnemonicParsing="false" onAction="#onMenuItemSistemaAction" text="Acessar Conta" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sobre">
+                    <items>
+                      <MenuItem fx:id="menuItemAutor" mnemonicParsing="false" onAction="#onMenuItemAutorAction" text="Autor do Sistema" />
+                    </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <HBox prefHeight="281.0" prefWidth="502.0">
+               <children>
+                  <AnchorPane prefHeight="280.0" prefWidth="506.0">
+                     <children>
+                        <Label layoutX="173.0" layoutY="20.0" prefHeight="30.0" prefWidth="176.0" text="𝐏 𝐈 𝐙 𝐙 𝐀 𝐑 𝐈 𝐀">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="161.0" fitWidth="217.0" layoutX="-3.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="164.0" fitWidth="167.0" layoutX="166.0" layoutY="58.0" opacity="0.91" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../pizza.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="140.0" layoutY="50.0" prefHeight="36.0" prefWidth="23.0" text="𝐏 ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="140.0" layoutY="84.0" text="𝐈  ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="173.0" layoutY="230.0" text="𝐏 𝐈 𝐙 𝐙 𝐀 𝐑 𝐈 𝐀">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="136.0" layoutY="118.0" text="𝐙">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="136.0" layoutY="151.0" text="𝐙">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="136.0" layoutY="185.0" text="𝐀">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="346.0" layoutY="58.0" prefHeight="26.0" prefWidth="20.0" text="𝐏">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="346.0" layoutY="82.0" prefHeight="36.0" prefWidth="18.0" text="𝐈">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="343.0" layoutY="115.0" prefHeight="32.0" prefWidth="19.0" text="𝐙">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="342.0" layoutY="151.0" prefHeight="16.0" prefWidth="15.0" text="𝐙">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="341.0" layoutY="185.0" text="𝐀">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

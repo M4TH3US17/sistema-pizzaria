@@ -6,9 +6,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import model.dao.DaoFactory;
-import model.dao.EmployeeDao;
-import model.entities.Employee;
 
 public class AccountViewController {
 
@@ -19,22 +16,22 @@ public class AccountViewController {
 	@FXML
 	private Button btnLogin;
 	
-	private EmployeeDao employeeDao = DaoFactory.createEmployeeDao();
-
 	@FXML
 	public void login() {
 		try {
-			Employee emp = employeeDao.findByAccount(txtEmail.getText(), password.getText());
+			String email = "gerente@gmail.com";
+			String senha = "gerente123";
 			ManagerViewController mv = new ManagerViewController();
-			if(emp.getCargo().equalsIgnoreCase("gerente")) {
+			if(txtEmail.getText().equalsIgnoreCase(email) && 
+					password.getText().equalsIgnoreCase(senha)) {
 				mv.onBtnFuncionariosAction();
-			} else if (emp.getCargo().equalsIgnoreCase("atendente")) {
-               
+			} else {
+				Alerts.showAlert("Usuário inválido",
+						null, "Os campos de e-mail e senha estão incorretos"
+								+ " ou vazios. Digite novamente."
+						, AlertType.ERROR);
 			}
 		} catch(NullPointerException e) {
-            Alerts.showAlert("Preencha Corretamente", null,
-            		"Os campos de e-mail e senha estão incorretos ou vazios. Digite novamente.",
-            		AlertType.ERROR);
 		}
 	}
 }

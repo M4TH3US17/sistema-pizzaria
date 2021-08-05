@@ -7,8 +7,6 @@ public class Employee {
 	private String cargo;
 	private Double salary;
 	
-	private Account account;
-	
 	public Employee() {
 	}
 	
@@ -16,25 +14,16 @@ public class Employee {
 		this.id = id;
 	}
 
+	public Employee(String name, String cargo, Double salary) {
+		this.name = name;
+		this.cargo = cargo;
+		this.salary = salary;
+	}
+	
 	public Employee(Integer id, String name, String cargo, Double salary) {
 		this.id = id;
 		this.name = name;
 		this.cargo = cargo;
-		this.salary = salary;
-	}
-	
-	public Employee(String name, String cargo, Account account, Double salary) {
-		this.name = name;
-		this.cargo = cargo;
-		this.account = account;
-		this.salary = salary;
-	}
-	
-	public Employee(Integer id, String name, String cargo, Account account, Double salary) {
-		this.id = id;
-		this.name = name;
-		this.cargo = cargo;
-		this.account = account;
 		this.salary = salary;
 	}
 	
@@ -68,13 +57,5 @@ public class Employee {
 
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
 	}
 }
