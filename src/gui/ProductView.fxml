@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="236.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProductViewController">
+   <children>
+      <Label text="ℙ𝕣𝕠𝕕𝕦𝕥𝕠𝕤">
+         <VBox.margin>
+            <Insets left="220.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button fx:id="btnNew" mnemonicParsing="false" onAction="#onBtnNewAction" text="Adicionar" />
+            <Button fx:id="btnUpdatePrice" mnemonicParsing="false" onAction="#onUpdatePriceAction" text="Atualizar" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onBtnDeleteAction" text="Deletar" />
+            <Button fx:id="btnClose" mnemonicParsing="false" onAction="#onBtnCloseAction" prefHeight="24.0" prefWidth="105.0" text="Funcionarios" />
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <TableView fx:id="tblViewProduct" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="tblColumnId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="tblColumnName" minWidth="150.0" prefWidth="211.0" text="Produto" />
+          <TableColumn fx:id="tblColumnPrice" minWidth="59.0" prefWidth="59.0" text="Preço" />
+            <TableColumn fx:id="tblColumnType" minWidth="130.0" prefWidth="75.0" text="Tipo" />
+        </columns>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </TableView>
+   </children>
+</VBox>

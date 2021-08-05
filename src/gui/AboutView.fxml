@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="181.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
+   <children>
+      <Label text="Criador">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" top="10.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="36.0" prefWidth="307.0" text="Matheus Washington Dalvino Marques" textFill="#541818">
+         <padding>
+            <Insets left="20.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label text="Email: matheusdalvino50@gmail.com" textFill="#6b2727">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="Sistema">
+         <padding>
+            <Insets left="20.0" top="7.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label prefHeight="27.0" prefWidth="155.0" text="Sistema de Compras" textFill="#6b2727">
+         <padding>
+            <Insets left="20.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="DejaVu Serif Condensed Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label text="→ Cadastra funcionario (gerente/atendente);">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label text="→ Cadastra produto e compras;">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+   </children>
+</VBox>
